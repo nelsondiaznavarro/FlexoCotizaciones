@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             x:Class="FlexoCotizaciones.ParametrosPopup"
+             Title="ParametrosPopup" BackgroundColor="#80000000" CloseWhenBackgroundIsClicked="False">
+    <Border StrokeThickness="4"
+        StrokeShape="RoundRectangle 40,40,40,40"
+        Background ="White"
+        Padding="16,8"
+        HorizontalOptions="Center"
+             HeightRequest="350" WidthRequest="350"  VerticalOptions="CenterAndExpand">
+        <Border.Stroke>
+            <LinearGradientBrush EndPoint="0,1">
+                <GradientStop Color="Orange"
+                          Offset="0.1" />
+                <GradientStop Color="Brown"
+                          Offset="1.0" />
+            </LinearGradientBrush>
+        </Border.Stroke>
+        <VerticalStackLayout 
+                    HeightRequest="350" 
+                    WidthRequest="350" 
+                 
+                    BackgroundColor="White">
+            
+            <Grid  Padding="5" 
+                   RowSpacing="1" 
+                   Margin="30,30"
+                   ColumnSpacing="1">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <Label  Grid.Row="1"
+                        Grid.Column="0"
+                        Text="Nombre"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        TextColor="Black"
+                        />
+                
+                <Entry x:Name="newParametro"
+                        
+                        Grid.Row="1"
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Keyboard="Text"
+                        />
+                
+                <Label 
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Text="Valor Desde"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        />
+                
+                <Entry x:Name="newValorDesde"
+                        Grid.Row="2"
+                        Grid.Column="2"
+                         FontAttributes="Bold"
+                        FontSize="Large"
+                        Keyboard="Numeric"
+                        
+                        />
+
+                <Label 
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Text="Valor Hasta"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        />
+                
+                <Entry x:Name="newValorHasta"
+                        Grid.Row="3"
+                        Grid.Column="2"
+                       FontAttributes="Bold"
+                        FontSize="Large"
+                       Keyboard="Numeric"
+                        
+                        />
+
+                <Label 
+                        Grid.Row="4"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Text="Valor o Porcentaje"
+                        TextColor="Black"
+                        />
+                
+                <Entry x:Name="newValorPorcentaje"
+                        Grid.Row="4"
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Keyboard="Numeric"
+                        
+                        />
+            
+                <Picker Title="Seleccione Tipo Paramétro"
+                        x:Name="pickerTipo"
+                         Grid.Row="5"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        FontSize="Large"
+                        Grid.ColumnSpan="2"
+                        />       
+
+                <Button Text="Agregar Parámetro"
+                        Grid.Row="6"
+                        Grid.Column="0"
+                        FontAttributes="Bold"
+                        x:Name="cmdAgregarPar"
+                        />
+
+                <Button Text="Salir"
+                        x:Name="cmdSalir"
+                        Grid.Row="6"
+                        Grid.Column="2"
+                        FontAttributes="Bold"
+                        BackgroundColor="Red" TextColor="White"
+                        />
+
+            </Grid>
+            
+        </VerticalStackLayout>
+    </Border>
+ 
+</mopups:PopupPage>

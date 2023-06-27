@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexoCotizaciones.ParametrosConf"
+             Title="Parametros Etiquetas">
+
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+             
+               
+            </Grid.ColumnDefinitions>
+            <ImageButton     x:Name="cmdAgregar"
+                        
+                        Grid.Row="1" Grid.Column="0" 
+                        Source="agregar.ico"
+                        />
+                        <!--Text="Nuevo Parámetro"
+                        BackgroundColor="Green"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start"-->
+            <ImageButton     x:Name="cmdRefrescar"
+                        
+                        Grid.Row="1" Grid.Column="1" 
+                        Source="refrescar.ico"
+                        />
+                        <!--
+                        Text="Refrescar"
+                        FontSize="Large"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start"-->
+
+            <ImageButton     x:Name="cmdEliminar"
+                        
+                        Grid.Row="1" Grid.Column="2" 
+                        Source="eliminar.ico"
+                        />
+
+            <ListView x:Name="ListaParametros"
+                        Margin="20"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="7"
+                        
+                      >
+               
+                <ListView.ItemTemplate>
+                    
+                    <DataTemplate>
+                        
+                            <ViewCell>
+                            <ScrollView Orientation="Horizontal" >
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="20"/>
+                                        <RowDefinition Height="30"/>
+                                        <RowDefinition Height="30"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="100"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="80"/>
+                                        <ColumnDefinition Width="80"/>
+                                       
+                                        
+                                    </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Start" FontSize="18" FontAttributes="Bold" />
+                                    <Label Text="{Binding Precio}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End"/>
+                                    <Label Text="{Binding Valordesde}"  Grid.Row="1" Grid.Column="0" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
+                                    <Label Text="{Binding ValorHasta}"  Grid.Row="1" Grid.Column="1" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
+                                    <Border  Grid.Row="1" Grid.Column="2"
+                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        Background= "red" 
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center"
+                                         IsVisible="True">
+
+                                        <Label Text="Valor Fijo"
+                                            TextColor="White"
+                                            FontSize="Small"
+                                            FontAttributes="Bold" />
+                                    </Border>
+                                    <Border  Grid.Row="1" Grid.Column="3"
+                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        Background= "green" 
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center"
+                                         IsVisible="True">
+
+                                        <Label Text="Porc."
+                                            TextColor="White"
+                                            FontSize="Small"
+                                            FontAttributes="Bold" />
+                                    </Border>
+                                    <Border  Grid.Row="1" Grid.Column="4"
+                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        Background= "yellow" 
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center"
+                                         IsVisible="True">
+
+                                        <Label Text="D-H"
+                                            TextColor="Black"
+                                            FontSize="Small"
+                                            FontAttributes="Bold" />
+                                    </Border>
+                                    <ImageButton x:Name="cmdEditar" Source="editar2.ico"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="5" />
+                                    <!--<Button  x:Name="cmdModificar" Text="Mod." Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold" />
+                                    <Button  x:Name="cmdEliminar" Text="Elim."  Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" BackgroundColor="Red" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold"/>-->
+                                </Grid>
+
+
+                            </ScrollView>
+                        </ViewCell>
+                  
+                    </DataTemplate>
+                   
+                </ListView.ItemTemplate>
+    
+    </ListView>
+
+
+        </Grid>
+
+
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexoCotizaciones.MainPage">
+
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button     x:Name="cmdAgregar"
+                        MaximumHeightRequest="40"
+                        MaximumWidthRequest="30"
+                        Grid.Row="1" Grid.Column="1"
+                        Text="+"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start"/>
+            <Button    MaximumHeightRequest="40"
+                        MaximumWidthRequest="30"
+                        Grid.Row="1" Grid.Column="3"
+                        Text="-"
+                       FontAttributes="Bold"
+                        VerticalOptions="Start"/>
+
+            <Button    MaximumHeightRequest="40"
+                        MaximumWidthRequest="30"
+                        Grid.Row="1" Grid.Column="5"
+                        Text="Listar"
+                        FontAttributes="Bold"
+                        x:Name="cmdListar"
+                        VerticalOptions="Start"/>
+
+            <ListView x:Name="ListaParametros"
+                        Margin="20"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="7"
+                      >
+                
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="20"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Start" FontSize="18" FontAttributes="Bold" />
+                                <Label Text="{Binding Precio}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End"/>
+                                <Label Text="{Binding Valordesde}"  Grid.Row="1" Grid.Column="0" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
+                                <Label Text="{Binding ValorHasta}"  Grid.Row="1" Grid.Column="1" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
+                                <Button  x:Name="cmdModificar" Text="Mod." Grid.Row="0" Grid.Column="3" Grid.RowSpan="2" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold" />
+                                <Button  x:Name="cmdEliminar" Text="Elim."  Grid.Row="0" Grid.Column="4" Grid.RowSpan="2" BackgroundColor="Red" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold"/>
+                            </Grid>
+                            
+                            
+                           
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
+
+        
+    </ScrollView>
+
+</ContentPage>
