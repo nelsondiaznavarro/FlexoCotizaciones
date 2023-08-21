@@ -4,11 +4,72 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:FlexoCotizaciones"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.TabBarIsVisible="False"
+    >
 
     <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+       
+        Title="Inicio"
+        ContentTemplate="{DataTemplate local:PantallaInicio}"
+        Shell.FlyoutItemIsVisible="False"
+        Shell.FlyoutBehavior="Disabled"
+        Route="PantallaInicio" />
+
+  
+    
+    <FlyoutItem Route="ConfParametros" FlyoutDisplayOptions="AsMultipleItems">
+        <!--<ShellContent
+        Icon="configuracion.png"
+        Title="Parametros Etiquetas"
+        ContentTemplate="{DataTemplate local:ConfParametros}"
+         />-->
+        <ShellContent
+        Icon="clientes.png"
+        Title="Clientes"
+        ContentTemplate="{DataTemplate local:IngresaClientes}"
+        />
+
+       <!--<ShellContent
+        Icon="papeles.png"
+        Title="Papeles"
+        ContentTemplate="{DataTemplate local:IngresaPapeles}"
+        />-->
+
+        <!--<ShellContent
+        Icon="troqueles.png"
+        Title="Troqueles"
+        ContentTemplate="{DataTemplate local:IngresaPapeles}"
+        />-->
+
+        <!--<ShellContent
+        Icon="usuario.png"
+        Title="Usuarios"
+        ContentTemplate="{DataTemplate local:ConfUsuarios}"
+        />-->
+
+        <ShellContent
+        Icon="editar2.png"
+        Title="Cotizaciones"
+        ContentTemplate="{DataTemplate local:Cotizaciones}"
+        />
+
+
+      
+
+        <ShellContent
+        Icon="androidsearch.png"
+        Title="Historial"
+        ContentTemplate="{DataTemplate local:HistorialCotizacionesV1}"
+        />
+
+       
+    </FlyoutItem>
+
+    <Shell.FlyoutFooter>
+        <StackLayout>
+            <Button Text="Cerrar Sesion" x:Name="cmdCerrarSesion" BackgroundColor="Green" WidthRequest="200" HorizontalOptions="Center" FontAttributes="Bold" />
+        </StackLayout>
+    </Shell.FlyoutFooter>
+   
 
 </Shell>

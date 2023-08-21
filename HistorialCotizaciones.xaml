@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexoCotizaciones.HistorialCotizaciones"
+             Title="Historial Cotizaciones">
+    <StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+              
+
+
+            </Grid.ColumnDefinitions>
+            
+                <Border  Grid.Row="0" Grid.Column="0"   Margin="2,2" Stroke="Black" StrokeThickness="2" WidthRequest="300" HeightRequest="60">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+
+                <HorizontalStackLayout>
+
+
+                    <ImageButton    HeightRequest="24"
+                                    HorizontalOptions="Start"
+                                    Source="lupa.png"
+                                    WidthRequest="40" />
+
+
+                    <Entry x:Name="txtBusquedaCotizaziones" 
+                           HorizontalTextAlignment="Center" 
+                           BackgroundColor="White" 
+                           FontAttributes="Bold" 
+                           FontSize="Large" 
+                           Margin="2,0" 
+                           HeightRequest="50"
+                           WidthRequest="250"
+                           Placeholder="Ingrese Busqueda"/>
+
+                </HorizontalStackLayout>
+
+
+            </Border>
+
+            <Entry x:Name="prueba" Placeholder="Hola"/>
+
+            <ListView x:Name="listaHistorial">
+                
+                
+                
+            </ListView>
+        </Grid>
+    </StackLayout>
+</ContentPage>

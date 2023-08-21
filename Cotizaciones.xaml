@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexoCotizaciones.Cotizaciones"
+             Title="Cotizaciones">
+    <ScrollView Orientation="Vertical"  >
+        <Grid Margin="5,5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="270"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="40"/>
+                
+                <RowDefinition Height="200"/>
+                <RowDefinition Height="50"/>
+
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="140"/>
+                </Grid.ColumnDefinitions>
+
+                <Label      Grid.Row="0"
+                            Grid.Column="0"
+                            Text="Folio  :"
+                            FontSize="Large"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Center"
+                        />
+
+
+
+                <Label      Grid.Row="0"
+                            Grid.Column="1"
+                            x:Name="lblFolio"
+                            FontAttributes="Bold"
+                            FontSize="Large"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Center"
+                        />
+                <Button     x:Name="cmdNuevaCotizacion"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            Text="Nueva Cotizacion"
+                            BackgroundColor="Green"
+                            Margin="5,5"
+                            FontAttributes="Bold"
+                        />
+
+            </Grid>
+            
+           
+
+
+            <Frame Grid.Row="1"
+                   Margin="5,5"
+                   BackgroundColor="White"
+                   BorderColor="Gray"
+                   HeightRequest="0">
+
+                <Grid   
+                   RowSpacing="4" 
+                   ColumnSpacing="1">
+
+                    <Grid.RowDefinitions>
+                       
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="250" />
+                        
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <Grid   Grid.Row="0"
+                            Grid.Column="0"
+                            Grid.ColumnSpan="2"
+                            >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="3*"/>
+                            <ColumnDefinition Width="*"/>
+
+                        </Grid.ColumnDefinitions>
+
+                        <Label  Grid.Column="0"
+                            Text="Razon Soc."
+                            FontAttributes="Bold"
+                            FontSize="Small"
+                            TextColor="Black"
+                            HorizontalTextAlignment="Start"
+                            VerticalTextAlignment="Center"
+                        />
+
+                        <Border     Grid.Row="0"
+                                    Grid.Column="1"
+                                >
+                            <Picker x:Name="cmbRazonEmpresa"
+                                    FontAttributes="Bold"
+                                    FontSize="Small"
+                                    ItemsSource="{Binding Cliente}"
+                                    ItemDisplayBinding="{Binding RazonSocial}"
+                                    
+                               />
+                            <!--<Entry x:Name="txtRazonEmpresa"
+                                    FontAttributes="Bold"
+                                    FontSize="Small"
+                                    Keyboard="Text"
+                               />-->
+                        </Border>
+
+                        <Button     x:Name="cmdBuscarCliente"
+                                    Grid.Column="2"
+                                    Text="..."
+                                    FontAttributes="Bold"
+                                    FontSize="Medium"
+                               />
+
+                    </Grid>
+
+
+
+
+
+                    <Label  Grid.Row="1"
+                        Grid.Column="0"
+                        Text="R.U.T"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+                        />
+                    <Border  Grid.Row="1"
+                        Grid.Column="1"
+                         >
+                        <Entry x:Name="txtRutUsuario"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        Keyboard="Text"
+                        
+                    />
+                    </Border>
+
+
+                    
+                    
+                    
+
+                    <Label  Grid.Row="2"
+                        Grid.Column="0"
+                        Text="C. Pago"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        TextColor="Black"
+                       HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+                        />
+                    <Border  Grid.Row="2"
+                        Grid.Column="2">
+                        <Picker Title="Selecione Condicion" FontSize="Small" x:Name="cboCondicion">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>15 dias</x:String>
+                                    <x:String>30 dias</x:String>
+                                    <x:String>45 dias</x:String>
+                                    <x:String>60 dias</x:String>
+                                    <x:String>75 dias</x:String>
+                                    <x:String>90 dias</x:String>
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                    </Border>
+
+
+                    <Label  Grid.Row="3"
+                        Grid.Column="0"
+                        Text="F. Validez"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        TextColor="Black"
+                        HorizontalTextAlignment="Start"
+                        VerticalTextAlignment="Center"
+                        />
+                    <Border  Grid.Row="3"
+                        Grid.Column="2">
+                        <DatePicker x:Name="txtFecha"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                       
+                    />
+
+                    </Border>
+
+                    <Grid  Grid.Row="4"
+                        Grid.Column="0"
+                       Grid.ColumnSpan="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Button Text="Agregar Item"
+                                Grid.Row="0"
+                                Grid.Column="0"
+                                FontAttributes="Bold"
+                                x:Name="cmdAgregarPar"
+                                BackgroundColor="Green"
+                         />
+
+                        <Button Text="Eliminar Item"
+                                x:Name="cmdSalir"
+                                Grid.Row="0"
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                BackgroundColor="Red" 
+                                TextColor="White"
+                        />
+                    </Grid>
+               </Grid>
+
+
+            </Frame>
+
+
+            <Grid BackgroundColor="Blue" Grid.Row="2"  Margin="10,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="25"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                    <ColumnDefinition Width="50"/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Descripcion" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" TextColor="White" HorizontalTextAlignment="Start"/>
+                <Label Text="Cant."  Grid.Row="1" Grid.Column="0" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Start" TextColor="White" HorizontalTextAlignment="End"/>
+                <Label Text="U.M."  Grid.Row="1" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="White" HorizontalTextAlignment="End"/>
+                <Label Text="Valor"  Grid.Row="1" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center" TextColor="White" HorizontalTextAlignment="End"/>
+                <Label Text="Total"  Grid.Row="1" Grid.Column="4" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="White" HorizontalTextAlignment="End"/>
+            </Grid>
+
+            <ListView x:Name="ListaItems"   Grid.Row="3">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid  Margin="10,0">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="30"/>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+
+                                <Label Text="{Binding Descripcion}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  VerticalOptions="Start" FontSize="Small" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Start"/>
+                                <Label Text="{Binding Cantidad}"  Grid.Row="1" Grid.Column="0" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black" HorizontalTextAlignment="End" />
+                                <Label Text="{Binding UM}"  Grid.Row="1" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="Black" HorizontalTextAlignment="End" />
+                                <Label Text="{Binding Valor,StringFormat={}{0:N2}}"  Grid.Row="1" Grid.Column="3" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center" TextColor="Black" HorizontalTextAlignment="End"/>
+                                <Label Text="{Binding Total,StringFormat={}{0:N0}}"  Grid.Row="1" Grid.Column="4" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="Black" HorizontalTextAlignment="End" />
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <Button x:Name="cmdDescripcionAdicional" Text="Desc.Adicional" IsVisible="False" WidthRequest="200" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="5" HorizontalOptions="Center"/>
+
+
+            <ListView   Grid.Row="5"
+                        x:Name="listaTotales"
+                       >
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid  HorizontalOptions="End">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="30"/>
+                                   
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+
+
+                                <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="5"  VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" TextColor="Black" HorizontalTextAlignment="Start"/>
+                                <Label x:Name="lblSubTotal" Text="{Binding Valor,StringFormat={}{0:N0}}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Start"  HorizontalTextAlignment="End" BackgroundColor="LightGray" TextColor="Black" />
+
+                               
+                            </Grid>
+
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+         
+
+            <Grid Grid.Row="6">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Button Text="Imprimir" Grid.Column="0"
+                        x:Name="cmdGenerarPDF"
+                        FontAttributes="Bold"
+                       
+                        
+                        BackgroundColor="Yellow" TextColor="Black"/>
+
+                <Button Text="Cancelar" Grid.Column="2"
+                        x:Name="cmdCancelarCotizacion"
+                        FontAttributes="Bold"
+                       
+                        
+                        BackgroundColor="Red" TextColor="White"/>
+            </Grid>
+            
+
+        </Grid>
+
+    </ScrollView>
+ 
+</ContentPage>

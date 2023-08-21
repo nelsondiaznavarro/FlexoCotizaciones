@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             x:Class="FlexoCotizaciones.AgregarItemPopup"
+             Title="Agregar Item Cotizacion" BackgroundColor="#80000000" CloseWhenBackgroundIsClicked="True">
+
+    <ScrollView 
+                    HeightRequest="560" 
+                    BackgroundColor="White"
+                    WidthRequest="350" 
+                    >
+
+        <Grid Margin="10,10">
+            <Grid.RowDefinitions>
+                
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="600"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+            <Label Text="Tipo Item" Grid.Row="0" Grid.Column="0" Padding="10,10" FontSize="Title" FontAttributes="Bold"/>
+            <Border Grid.Row="0" Grid.Column="1">
+                <Picker Title="Selecione Item"  x:Name="cmbTipoItem" FontSize="Medium" FontAttributes="Bold" BackgroundColor="LightGray" >
+                    <Picker.Items>
+
+                        <x:String>Producto</x:String>
+                        <x:String>Servicio</x:String>
+                        <x:String>Etiquetas</x:String>
+
+
+
+                    </Picker.Items>
+                </Picker>
+
+            </Border>
+
+
+
+            <Grid x:Name="gridProductos" IsVisible="False" Grid.Row="1" Grid.ColumnSpan="2" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="30"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Productos" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Blue" TextColor="White"/>
+                <Label Text="Productos" Grid.Row="1" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="1" Grid.Column="1" >
+                    <Picker Title="Selecione Producto" 
+                        x:Name="cmbProductos" 
+                        FontSize="Medium" 
+                        FontAttributes="Bold" 
+                        BackgroundColor="LightGray" 
+                        ItemsSource="{Binding Productos}"
+                        ItemDisplayBinding="{Binding Nombre}">
+
+                    </Picker>
+
+                </Border>
+                <Label Text="Precio Unitario" Grid.Row="2" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="2" Grid.Column="1">
+                    <Entry x:Name="txtPrecioUnitarioProducto" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric" />
+                </Border>
+
+                <Label Text="Cantidad" Grid.Row="3" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="3" Grid.Column="1">
+                    <Entry x:Name="txtcantidadProducto" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric" />
+                </Border>
+
+                <Label Text="Subtotal Item" Grid.Row="4" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="4" Grid.Column="1">
+                    <Entry x:Name="txtTotalItemProducto" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric" />
+                </Border>
+
+                <Button x:Name="cmdIngresarProducto"  Grid.Row="5" Grid.Column="0" Text="Agregar" BackgroundColor="Green" TextColor="White" WidthRequest="150" Margin="0,0"/>
+                <Button x:Name="cmdCancelarProducto"  Grid.Row="5" Grid.Column="1" Text="Cancelar" BackgroundColor="Red" TextColor="White" WidthRequest="150" Margin="0,0"/>
+
+            </Grid>
+            <Grid x:Name="gridServicios" IsVisible="False" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="46"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Servicios" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontSize="Medium" FontAttributes="Bold" BackgroundColor="Blue" TextColor="White"/>
+                <Label Text="Descrip. Servicio" Grid.Row="1" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Entry x:Name="txtDescServicio" />
+                </Border>
+
+
+
+                <Label Text="Precio Unitario" Grid.Row="3" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="3" Grid.Column="1">
+                    <Entry x:Name="txtPrecioUnitarioServicio" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric" />
+                </Border>
+
+                <Label Text="Cantidad" Grid.Row="4" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="4" Grid.Column="1">
+                    <Entry x:Name="txtcantidadServicio" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric" />
+                </Border>
+
+                <Label Text="Subtotal Item" Grid.Row="5" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="5" Grid.Column="1">
+                    <Entry x:Name="txtTotalItemServicio" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric" />
+                </Border>
+
+                <Button x:Name="cmdIngresarServicio"  Grid.Row="6" Grid.Column="0" Text="Agregar" BackgroundColor="Green" TextColor="White" WidthRequest="150" Margin="0,0"/>
+                <Button x:Name="cmdCancelarServicio"  Grid.Row="6" Grid.Column="1" Text="Cancelar" BackgroundColor="Red" TextColor="White" WidthRequest="150" Margin="0,0"/>
+
+
+
+            </Grid>
+            <Grid x:Name="gridEtiquetas" IsVisible="False" Grid.Row="1" Grid.ColumnSpan="2" RowSpacing="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Etiquetas" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" HorizontalTextAlignment="Center" FontSize="Title" FontAttributes="Bold" BackgroundColor="Blue" TextColor="White"/>
+                <Label Text="Papel" Grid.Row="1" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="1" Grid.Column="1" >
+                    <Picker Title="Selecione Tipo Papel" 
+                        x:Name="cmbTiposPapel" 
+                        FontSize="Small" 
+                        FontAttributes="Bold" 
+                        BackgroundColor="LightGray" 
+                        ItemsSource="{Binding Id}"
+                        ItemDisplayBinding="{Binding IdNombre}"
+                         HeightRequest="50"   
+                         >
+                    </Picker>
+                </Border>
+
+                <Label Text="Troquel" Grid.Row="2" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="2" Grid.Column="1" >
+                    <Picker Title="Selecione Troquel" 
+                        x:Name="cmbTroqueles" 
+                        FontSize="Small" 
+                        FontAttributes="Bold" 
+                        BackgroundColor="LightGray" 
+                        ItemsSource="{Binding Id}"
+                        ItemDisplayBinding="{Binding dato}"
+                         HeightRequest="50"   
+                         >
+                    </Picker>
+                </Border>
+
+                <Grid Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Padding="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Alto (mm)"  Grid.Row="0" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"    />
+                    <Border Padding="10,0"  Grid.Row="0" Grid.Column="1" Stroke="Red" StrokeThickness="2">
+                        <Entry x:Name="txtAltoEtiquetas" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                    <Label Text="Ancho (mm)" Grid.Row="0" Grid.Column="2"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                    <Border Padding="10,0" Grid.Row="0" Grid.Column="3" Stroke="Red" StrokeThickness="2">
+                        <Entry x:Name="txtLargoEtiquetas" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                </Grid>
+
+
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Padding="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label Text="Cantidad"  Grid.Row="0" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"    />
+                    <Border Padding="10,0"  Grid.Row="0" Grid.Column="1" Stroke="Red" StrokeThickness="2">
+                        <Entry x:Name="txtcantidadEtiquetas" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                    <Label Text="Lamina Nueva" Grid.Row="0" Grid.Column="2"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                    <Border Padding="10,0" Grid.Row="0" Grid.Column="3" Stroke="Red" StrokeThickness="2">
+                        <Entry x:Name="txtLaminas" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Padding="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label  Text="Colores"  Grid.Row="0" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"    />
+                    <Border Padding="10,0"  Grid.Row="0" Grid.Column="1" Stroke="Red" StrokeThickness="2">
+                        <Entry x:Name="txtColores" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                    <Label Text="Clisse Nuevo" Grid.Row="0" Grid.Column="2"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                    <Border Padding="10,0" Grid.Row="0" Grid.Column="3" Stroke="Red" StrokeThickness="2">
+                        <Entry x:Name="txtClisse" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                </Grid>
+
+                <Grid Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2" Padding="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+
+                    </Grid.ColumnDefinitions>
+
+                    <Label  Text="Barniz"  Grid.Row="0" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"    />
+                    <Border Padding="10,0"  Grid.Row="0" Grid.Column="1" Stroke="Red" StrokeThickness="2">
+                        <Entry x:Name="txtBarniz" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+
+                    <Label  Text="N° Bandas"  Grid.Row="0" Grid.Column="2"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"    />
+                    <Border Padding="10,0"  Grid.Row="0" Grid.Column="3" Stroke="Red" StrokeThickness="2" >
+                        <Entry x:Name="txtNumeroBandas" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                    
+                </Grid>
+
+                <Grid Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Padding="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+                        <ColumnDefinition Width="65"/>
+                        <ColumnDefinition Width="90"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label  Text="% Comision"  Grid.Row="0" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"    />
+                    <Border Padding="10,0"  Grid.Row="0" Grid.Column="1" Stroke="Red" StrokeThickness="2" >
+                        <Entry x:Name="txtPorcComision" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" />
+                    </Border>
+                    <Label Text="$        Comision" Grid.Row="0" Grid.Column="2"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                    <Border Padding="10,0" Grid.Row="0" Grid.Column="3" BackgroundColor="Black">
+                        <Entry Text="0" TextColor="White" x:Name="txtMontoComision" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" BackgroundColor="Black" />
+                    </Border>
+                </Grid>
+
+                
+
+
+                <Label Text="Precio Uni. Etiqueta" Grid.Row="8" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Padding="10,0" Grid.Row="8" Grid.Column="1" BackgroundColor="Black">
+                    <Entry x:Name="txtPrecioEtiqueta" HorizontalTextAlignment="Start" FontSize="Small" FontAttributes="Bold" Keyboard="Numeric" BackgroundColor="Black" TextColor="White"/>
+                </Border>
+
+
+                <Label Text="Subtotal Item" Grid.Row="9" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="9" Grid.Column="1" BackgroundColor="Black">
+                    <Entry Text="0" TextColor="White" x:Name="txtTotalItemEtiqueta" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Numeric"  BackgroundColor="Black"/>
+                </Border>
+
+                <Button x:Name="cmdCalcularEtiqueta"  Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="6" Text="Calcular Etiqueta" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="Gray" TextColor="Yellow"  Margin="0,0"/>
+                <Button x:Name="cmdDescAdicional"  Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="6" Text="Descripcion Adicional" HorizontalOptions="Center" WidthRequest="300" BackgroundColor="Blue" TextColor="Yellow"  Margin="0,0"/>
+                <Button x:Name="cmdIngresarEtiqueta"  Grid.Row="12" Grid.Column="0" Text="Agregar" BackgroundColor="Green" TextColor="White" WidthRequest="150" Margin="0,0"/>
+                <Button x:Name="cmdCancelarEtiqueta"  Grid.Row="12" Grid.Column="1" Text="Cancelar" BackgroundColor="Red" TextColor="White" WidthRequest="150" Margin="0,0"/>
+
+            </Grid>
+
+        </Grid>
+
+
+
+    </ScrollView>
+
+
+</mopups:PopupPage>

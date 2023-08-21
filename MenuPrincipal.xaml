@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:c="clr-namespace:FlexoCotizaciones.Controls"
+             x:Class="FlexoCotizaciones.MenuPrincipal"
+             Title="MenuPrincipal">
+   
+    <ContentPage Title="Parámetros Etiquetas"  IconImageSource="configuracion.png">
+
+
+        <ScrollView>
+            <Grid  Margin="30,30"
+                   Padding="5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                
+
+                </Grid.ColumnDefinitions>
+
+                <Label Text="Metros Lineal" Grid.Row="1" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center" />
+                <Border  Grid.Row="1" Grid.Column="1"  Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry  Keyboard="Numeric" x:Name="txtMetrosLineal" HorizontalTextAlignment="Start" BackgroundColor="White" TextColor="Black" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+                </Border>
+                <Label Text="Metros Hora" Grid.Row="2" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Border  Grid.Row="2" Grid.Column="1"   Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry Keyboard="Numeric"  x:Name="txtMetrosHora" HorizontalTextAlignment="Start" BackgroundColor="White" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+                </Border>
+                
+                <Label Text="Clisse" Grid.Row="3" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Border  Grid.Row="3" Grid.Column="1"   Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry Keyboard="Numeric"  x:Name="txtClisse" HorizontalTextAlignment="Start" BackgroundColor="White" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+                </Border>
+                
+                <Label Text="Horas Maquina" Grid.Row="4" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Border  Grid.Row="4" Grid.Column="1"  Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry Keyboard="Numeric"  x:Name="txtHorasMaquina" HorizontalTextAlignment="Start" BackgroundColor="White" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+                </Border>
+                
+                <Label Text="Calce" Grid.Row="5" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Border   Grid.Row="5" Grid.Column="1"  Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry Keyboard="Numeric" x:Name="txtCalce" HorizontalTextAlignment="Start" BackgroundColor="White" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+                </Border>
+                
+                <Label Text="Barniz" Grid.Row="6" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Border  Grid.Row="6" Grid.Column="1"   Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry Keyboard="Numeric"  x:Name="txtBarniz" HorizontalTextAlignment="Start" BackgroundColor="White" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+                </Border>
+                
+                <Label Text="Lamina" Grid.Row="7" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Border   Grid.Row="7" Grid.Column="1"   Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry Keyboard="Numeric" x:Name="txtLamina" HorizontalTextAlignment="Start" BackgroundColor="White" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+                </Border>
+                
+                <Label Text="Colores" Grid.Row="8" Grid.Column="0" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Border   Grid.Row="8" Grid.Column="1"   Margin="2,2" Stroke="Black" StrokeThickness="2">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                    </Border.StrokeShape>
+                    <Entry Keyboard="Numeric" x:Name="txtColores" HorizontalTextAlignment="Start" BackgroundColor="White" FontAttributes="Bold" FontSize="Medium" Margin="2,0"/>
+
+                </Border>
+                
+
+                <Button Text="Guardar" BackgroundColor="Blue" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="2" WidthRequest="200" HorizontalOptions="Center" x:Name="cmdGuardarParametros"/>
+
+
+
+
+
+            </Grid>
+
+
+        </ScrollView>
+
+    </ContentPage>
+    <ContentPage Title="Adm. Usuarios"  IconImageSource="usuario.png">
+
+
+        <ScrollView>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="80"/>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="20"/>
+
+                </Grid.ColumnDefinitions>
+                <Button     x:Name="cmdAgregarUsuario"
+                        
+                        Grid.Row="1" Grid.Column="1" 
+                        Text="Agregar(+)"
+                        BackgroundColor="Green"
+                            FontAttributes="Bold"
+                        />
+                <!--Text="Nuevo Parámetro"
+                        BackgroundColor="Green"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start"-->
+                <Button     x:Name="cmdListarUsuarios"
+                        IsVisible="False"
+                        Grid.Row="1" Grid.Column="3" 
+                        Text="Refrescar(*)"
+                        BackgroundColor="Yellow"
+                       TextColor="Black"
+                            FontAttributes="Bold"
+                        />
+                <!--
+                        Text="Refrescar"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start"-->
+
+                <Button     x:Name="cmdEliminarUsuario"
+                        
+                        Grid.Row="1" Grid.Column="5" 
+                        Text="Eliminar(-)"
+                            BackgroundColor="Red"
+                            FontAttributes="Bold"
+                        />
+
+                <ListView x:Name="ListaUsuariosFront"
+                        Margin="20"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="7"
+                        ItemSelected="OnItemSelected"
+                      >
+
+                    <ListView.Header>
+                        <Grid BackgroundColor="Blue">
+                            <Grid.RowDefinitions>
+
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="200"/>
+                                <ColumnDefinition Width="100"/>
+                               
+                           
+
+
+                            </Grid.ColumnDefinitions>
+                           
+                            <Label Text="Id" Grid.Row="0" Grid.Column="0"  VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                            <Label Text="R.U.T"  Grid.Row="0" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center" TextColor="White"/>
+                            <Label Text="Iniciales"  Grid.Row="0" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="White"/>
+
+                            <!--<ImageButton x:Name="cmdEditar" Source="editar2.ico"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" />-->
+                            <!--<Button  x:Name="cmdModificar" Text="Mod." Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold" />
+                                    <Button  x:Name="cmdEliminar" Text="Elim."  Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" BackgroundColor="Red" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold"/>-->
+                        </Grid>
+
+
+                    </ListView.Header>
+
+                    <ListView.ItemTemplate>
+
+                        <DataTemplate>
+
+                            <ViewCell>
+                              
+                                    <Grid>
+                                        <Grid.RowDefinitions>
+
+                                            <RowDefinition Height="30"/>
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="40"/>
+                                            <ColumnDefinition Width="200"/>
+                                            <ColumnDefinition Width="100"/>
+                                         
+
+
+                                        </Grid.ColumnDefinitions>
+                                        <!--<CheckBox x:Name="checkSeleccionadoUsuarios" Grid.Row="0" Grid.Column="0" />-->
+                                        <Label Text="{Binding Id}" Grid.Row="0" Grid.Column="0"  VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" />
+                                        <Label Text="{Binding rut}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center"/>
+                                        <Label Text="{Binding iniciales}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" />
+
+                                      
+                                    </Grid>
+
+
+                              
+                            </ViewCell>
+
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+                </ListView>
+
+
+            </Grid>
+
+
+        </ScrollView>
+
+    </ContentPage>
+    <ContentPage Title="Cotizaciones"  IconImageSource="usuario.png">
+    </ContentPage>
+</TabbedPage>

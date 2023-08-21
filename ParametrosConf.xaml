@@ -26,17 +26,18 @@
                         />
                         <!--Text="Nuevo Parámetro"
                         BackgroundColor="Green"
-                        FontSize="Large"
+                        FontSize="Medium"
                         FontAttributes="Bold"
                         VerticalOptions="Start"-->
             <ImageButton     x:Name="cmdRefrescar"
                         
                         Grid.Row="1" Grid.Column="1" 
                         Source="refrescar.ico"
+                        
                         />
                         <!--
                         Text="Refrescar"
-                        FontSize="Large"
+                        FontSize="Medium"
                         FontAttributes="Bold"
                         VerticalOptions="Start"-->
 
@@ -53,7 +54,74 @@
                         Grid.ColumnSpan="7"
                         
                       >
-               
+                <ListView.Header>
+                    <ScrollView Orientation="Horizontal" >
+                        <Grid BackgroundColor="#171796">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="20"/>
+                                <RowDefinition Height="30"/>
+                                
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="40"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="100"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="80"/>
+                                <ColumnDefinition Width="80"/>
+
+
+                            </Grid.ColumnDefinitions>
+                            
+                            <Label Text="Nombre" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Start" FontSize="18" FontAttributes="Bold" TextColor="White" />
+                            <Label Text="%-$"  Grid.Row="0" Grid.Column="3" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="White"/>
+                            <Label Text="Desde"  Grid.Row="1" Grid.Column="1" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="White"/>
+                            <Label Text="Hasta"  Grid.Row="1" Grid.Column="2" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="white"/>
+                            <!--<Border  Grid.Row="1" Grid.Column="3"
+                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        Background= "red" 
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center"
+                                         IsVisible="True">
+
+                                <Label Text="Valor Fijo"
+                                            TextColor="White"
+                                            FontSize="Small"
+                                            FontAttributes="Bold" />
+                            </Border>
+                            <Border  Grid.Row="1" Grid.Column="4"
+                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        Background= "green" 
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center"
+                                         IsVisible="True">
+
+                                <Label Text="Porc."
+                                            TextColor="White"
+                                            FontSize="Small"
+                                            FontAttributes="Bold" />
+                            </Border>
+                            <Border  Grid.Row="1" Grid.Column="5"
+                                        StrokeShape="RoundRectangle 10,10,10,10"
+                                        Background= "yellow" 
+                                        VerticalOptions="Start"
+                                        HorizontalOptions="Center"
+                                         IsVisible="True">
+
+                                <Label Text="D-H"
+                                            TextColor="Black"
+                                            FontSize="Small"
+                                            FontAttributes="Bold" />
+                            </Border>-->
+                            <ImageButton x:Name="cmdEditar" Source="editar2.ico"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" />
+                            <!--<Button  x:Name="cmdModificar" Text="Mod." Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold" />
+                                    <Button  x:Name="cmdEliminar" Text="Elim."  Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" BackgroundColor="Red" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold"/>-->
+                        </Grid>
+
+
+                    </ScrollView>
+                </ListView.Header>
                 <ListView.ItemTemplate>
                     
                     <DataTemplate>
@@ -67,6 +135,7 @@
                                         <RowDefinition Height="30"/>
                                     </Grid.RowDefinitions>
                                     <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="40"/>
                                         <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="100"/>
                                         <ColumnDefinition Width="100"/>
@@ -76,11 +145,12 @@
                                        
                                         
                                     </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" VerticalOptions="Start" FontSize="18" FontAttributes="Bold" />
-                                    <Label Text="{Binding Precio}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End"/>
-                                    <Label Text="{Binding Valordesde}"  Grid.Row="1" Grid.Column="0" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
-                                    <Label Text="{Binding ValorHasta}"  Grid.Row="1" Grid.Column="1" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
-                                    <Border  Grid.Row="1" Grid.Column="2"
+                                    <CheckBox x:Name="checkSeleccionado"/>
+                                    <Label Text="{Binding Nombre}" Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" VerticalOptions="Start" FontSize="18" FontAttributes="Bold" />
+                                    <Label Text="{Binding Precio}"  Grid.Row="0" Grid.Column="3" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End"/>
+                                    <Label Text="{Binding Valordesde}"  Grid.Row="1" Grid.Column="1" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
+                                    <Label Text="{Binding ValorHasta}"  Grid.Row="1" Grid.Column="2" VerticalOptions="Start" FontSize="Small" VerticalTextAlignment="End" TextColor="Gray"/>
+                                    <Border  Grid.Row="1" Grid.Column="3"
                                         StrokeShape="RoundRectangle 10,10,10,10"
                                         Background= "red" 
                                         VerticalOptions="Start"
@@ -92,7 +162,7 @@
                                             FontSize="Small"
                                             FontAttributes="Bold" />
                                     </Border>
-                                    <Border  Grid.Row="1" Grid.Column="3"
+                                    <Border  Grid.Row="1" Grid.Column="4"
                                         StrokeShape="RoundRectangle 10,10,10,10"
                                         Background= "green" 
                                         VerticalOptions="Start"
@@ -104,7 +174,7 @@
                                             FontSize="Small"
                                             FontAttributes="Bold" />
                                     </Border>
-                                    <Border  Grid.Row="1" Grid.Column="4"
+                                    <Border  Grid.Row="1" Grid.Column="5"
                                         StrokeShape="RoundRectangle 10,10,10,10"
                                         Background= "yellow" 
                                         VerticalOptions="Start"
@@ -116,7 +186,7 @@
                                             FontSize="Small"
                                             FontAttributes="Bold" />
                                     </Border>
-                                    <ImageButton x:Name="cmdEditar" Source="editar2.ico"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="5" />
+                                    <ImageButton x:Name="cmdEditar" Source="editar2.ico"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" />
                                     <!--<Button  x:Name="cmdModificar" Text="Mod." Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold" />
                                     <Button  x:Name="cmdEliminar" Text="Elim."  Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" BackgroundColor="Red" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold"/>-->
                                 </Grid>

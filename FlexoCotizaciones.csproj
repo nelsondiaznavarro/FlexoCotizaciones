@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<PropertyGroup>
-		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks>net7.0-maccatalyst;net7.0-android;net7.0-ios</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
@@ -65,24 +65,65 @@
 	-->
 	<ItemGroup>
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="Microsoft.Toolkit.Mvvm" Version="7.1.2" />
 		<PackageReference Include="Mopups" Version="1.1.1" />
 		<PackageReference Include="SQLite" Version="3.13.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
 		<PackageReference Include="SQLitePCLRaw.provider.dynamic_cdecl" Version="2.1.5" />
+		<PackageReference Include="Syncfusion.Pdf.NET" Version="22.2.8" />
 		<PackageReference Include="Syncfusion.Xamarin.Pdf" Version="22.1.34" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="AgregarITemCotizacion.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="AgregarItemPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ConfParametros.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ConfUsuarios.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Cotizaciones.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="EmpresasPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="HistorialCotizaciones.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="HistorialCotizacionesV1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="IngresaClientes.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="IngresaPapeles.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="MenuPrincipal.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="PantallaInicio.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="PapelesPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ParametrosConf.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="UsuariosPopup.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="ParametrosPopup.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="PruebaPDF.xaml">
+	  <MauiXaml Update="VisorPDF.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>
@@ -93,11 +134,26 @@
 	
 	<ItemGroup>
 	  <None Remove="Resources\Images\agregar.ico" />
+	  <None Remove="Resources\Images\androidsearch.png" />
+	  <None Remove="Resources\Images\clientes.png" />
+	  <None Remove="Resources\Images\configuracion.png" />
+	  <None Remove="Resources\Images\copiar.png" />
 	  <None Remove="Resources\Images\editar.ico" />
 	  <None Remove="Resources\Images\editar2.ico" />
 	  <None Remove="Resources\Images\eliminar.ico" />
 	  <None Remove="Resources\Images\LogoFlexografica.png" />
+	  <None Remove="Resources\Images\lupa.png" />
+	  <None Remove="Resources\Images\papeles.png" />
+	  <None Remove="Resources\Images\pdf.png" />
 	  <None Remove="Resources\Images\refrescar.ico" />
+	  <None Remove="Resources\Images\troqueles.png" />
+	  <None Remove="Resources\Images\usuario.png" />
+	</ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="UsuariosPopup.xaml.cs">
+	    <DependentUpon>UsuariosPopup.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 	
 	<ProjectExtensions><VisualStudio><UserProperties XamarinHotReloadDebuggerTimeoutExceptionFlexoCotizacionesHideInfoBar="True" XamarinHotReloadGenericExceptionInfoBarFlexoCotizacionesHideInfoBar="True" /></VisualStudio></ProjectExtensions>

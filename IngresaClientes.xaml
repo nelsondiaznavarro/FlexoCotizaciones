@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexoCotizaciones.IngresaClientes"
+             Title="Clientes">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="500"/>
+                <RowDefinition Height="40"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="20"/>
+
+            </Grid.ColumnDefinitions>
+
+            <Border  Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3"  Margin="2,2" Stroke="Black" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                </Border.StrokeShape>
+                <Entry x:Name="txtBusqueda" Placeholder="Ingrese RUT o Nombre"  FontSize="Medium" Margin="2,0" HorizontalTextAlignment="Center" />
+            </Border>
+            
+            <Button x:Name="cmdBuscarClientes" Text="Buscar" TextColor="White" Grid.Row="1" Grid.Column="5" BackgroundColor="Gray" HeightRequest="40"/>
+            <ListView x:Name="ListaClientesFront"
+                        Margin="20"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="7"
+                         >
+
+                <ListView.Header>
+                    <Grid BackgroundColor="Blue">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="30"/>
+                            
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="30"/>
+                            <ColumnDefinition Width="120"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="50"/>
+
+
+
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Id" Grid.Row="0" Grid.Column="0"  VerticalOptions="Center" FontSize="Medium" VerticalTextAlignment="Center" FontAttributes="None" TextColor="White"/>
+                        <Label Text="R.U.T"  Grid.Row="0" Grid.Column="1" VerticalOptions="Center" FontSize="Medium" VerticalTextAlignment="Center" TextColor="White"/>
+                        <Label Text="Razon Social"  Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="White"/>
+
+                        
+                        <!--<Button  x:Name="cmdModificar" Text="Mod." Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold" />
+                                    <Button  x:Name="cmdEliminar" Text="Elim."  Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" BackgroundColor="Red" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold"/>-->
+                    </Grid>
+
+
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="30"/>
+                                    
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="120"/>
+                                    <ColumnDefinition Width="200"/>
+
+
+
+                                </Grid.ColumnDefinitions>
+                                <Label Text="{Binding Id}" Grid.Row="0" Grid.Column="0"  VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" />
+                                <Label Text="{Binding RUT}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding RazonSocial}"  Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Start" />
+                                <!--<ImageButton x:Name="cmdEditar" Source="editar2.ico"  Grid.Row="0"  Grid.Column="3"  Clicked="cmdEditarCliente_Clicked"  />-->
+
+                            </Grid>
+
+
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+            <Button     x:Name="cmdAgregarCliente"
+                        Grid.Row="3" Grid.Column="1" 
+                        Text="Agregar(+)"
+                        BackgroundColor="Green"
+                        FontAttributes="Bold"
+                        />
+
+            <Button     x:Name="cmdModificarUsuarios"
+                        
+                        Grid.Row="3" Grid.Column="3" 
+                        Text="Modificar"
+                        BackgroundColor="Yellow"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        />
+
+            <Button     x:Name="cmdEliminarCliente"
+                        
+                        Grid.Row="3" Grid.Column="5" 
+                        Text="Eliminar(-)"
+                            BackgroundColor="Red"
+                            FontAttributes="Bold"
+                        />
+
+
+        </Grid>
+
+
+    </ScrollView>
+</ContentPage>

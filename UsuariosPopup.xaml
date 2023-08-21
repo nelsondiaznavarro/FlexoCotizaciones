@@ -2,11 +2,11 @@
 <mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
-             x:Class="FlexoCotizaciones.ParametrosPopup"
-             Title="ParametrosPopup" BackgroundColor="#80000000" CloseWhenBackgroundIsClicked="False">
+             x:Class="FlexoCotizaciones.UsuariosPopup"
+             Title="Usuarios" BackgroundColor="#80000000" CloseWhenBackgroundIsClicked="False">
   
         <VerticalStackLayout 
-                    HeightRequest="350" 
+                    HeightRequest="250" 
                     WidthRequest="350" 
                  
                     BackgroundColor="White">
@@ -35,85 +35,67 @@
                 
                 <Label  Grid.Row="1"
                         Grid.Column="0"
-                        Text="Nombre"
+                        Text="R.U.T"
                         FontAttributes="Bold"
-                        FontSize="Medium"
+                        FontSize="Small"
                         TextColor="Black"
                         />
-                
-                <Entry x:Name="newParametro"
+
+
+            <Border   Grid.Row="1"
+                        Grid.Column="2"  Margin="2,2" Stroke="Black" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                </Border.StrokeShape>
+
+                <Entry x:Name="txtRutUsuario"
                         
-                        Grid.Row="1"
-                        Grid.Column="2"
+                       
                         FontAttributes="Bold"
                         FontSize="Medium"
                         Keyboard="Text"
+                       
                         />
+            </Border>
+           
                 
                 <Label 
                         Grid.Row="2"
                         Grid.Column="0"
-                        Text="Valor Desde"
+                        Text="Iniciales"
                         TextColor="Black"
                         FontAttributes="Bold"
-                        FontSize="Medium"
+                        FontSize="Small"
                         />
-                
-                <Entry x:Name="newValorDesde"
-                        Grid.Row="2"
-                        Grid.Column="2"
+            <Border   Grid.Row="2"
+                        Grid.Column="2"  Margin="2,2" Stroke="Black" StrokeThickness="2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="5, 5, 5, 5" />
+                </Border.StrokeShape>
+                <Entry x:Name="txtIniciales"
+                       
                          FontAttributes="Bold"
                         FontSize="Medium"
-                        Keyboard="Numeric"
+                        Keyboard="Text"
                         
                         />
-
-                <Label 
-                        Grid.Row="3"
-                        Grid.Column="0"
-                        Text="Valor Hasta"
-                        TextColor="Black"
-                        FontAttributes="Bold"
-                        FontSize="Medium"
-                        />
-                
-                <Entry x:Name="newValorHasta"
-                        Grid.Row="3"
-                        Grid.Column="2"
-                       FontAttributes="Bold"
-                        FontSize="Medium"
-                       Keyboard="Numeric"
-                        
-                        />
-
-                <Label 
-                        Grid.Row="4"
-                        Grid.Column="0"
-                        FontAttributes="Bold"
-                        FontSize="Medium"
-                        Text="Valor o Porcentaje"
-                        TextColor="Black"
-                        />
-                
-                <Entry x:Name="newValorPorcentaje"
-                        Grid.Row="4"
-                        Grid.Column="2"
-                        FontAttributes="Bold"
-                        FontSize="Medium"
-                        Keyboard="Numeric"
-                        
-                        />
+            </Border>
             
-                <Picker Title="Seleccione Tipo Paramétro"
-                        x:Name="pickerTipo"
-                         Grid.Row="5"
-                        Grid.Column="0"
-                        FontAttributes="Bold"
-                        FontSize="Medium"
-                        Grid.ColumnSpan="2"
-                        />       
 
-                <Button Text="Agregar Parámetro"
+                <Label 
+                        Grid.Row="3"
+                        Grid.Column="0"
+                        Text="Activo"
+                        TextColor="Black"
+                        FontAttributes="Bold"
+                        FontSize="Small"
+                        />
+                 <Switch x:Name="switchActivo"
+                          Grid.Row="3"
+                        Grid.Column="1"
+                     IsToggled="false" />
+
+            <Button Text="Agregar Usuario"
                         Grid.Row="6"
                         Grid.Column="0"
                         FontAttributes="Bold"

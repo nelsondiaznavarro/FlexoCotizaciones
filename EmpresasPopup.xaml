@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
+             x:Class="FlexoCotizaciones.EmpresasPopup"
+             Title="Agregar Cliente" BackgroundColor="#80000000" CloseWhenBackgroundIsClicked="False">
+
+    <ScrollView  HeightRequest="560" 
+                    BackgroundColor="White"
+                    WidthRequest="350" >
+        <Grid Margin="10,10">
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+
+
+
+            <Grid x:Name="gridProductos" IsVisible="True" Grid.Row="0" Grid.ColumnSpan="2" RowSpacing="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+                    <RowDefinition Height="45"/>
+
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+
+                <Label Text="R.U.T." Grid.Row="1" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="1" Grid.Column="1">
+                    <Entry x:Name="txtRutCliente" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Text" />
+                </Border>
+
+                <Label Text="Razon Social" Grid.Row="2" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="2" Grid.Column="1">
+                    <Entry x:Name="txtRazonSocial" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Text" />
+                </Border>
+
+                <Label Text="Direccion" Grid.Row="3" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="3" Grid.Column="1">
+                    <Entry x:Name="txtDireccion" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Text" />
+                </Border>
+
+                <Label Text="Comuna" Grid.Row="4" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="4" Grid.Column="1">
+                    <Entry x:Name="txtComuna" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Text" />
+                </Border>
+
+                <Label Text="Ciudad" Grid.Row="5" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="5" Grid.Column="1">
+                    <Entry x:Name="txtCiudad" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Text" />
+                </Border>
+
+                <Label Text="Contacto" Grid.Row="6" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="6" Grid.Column="1">
+                    <Entry x:Name="txtContacto" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Text" />
+                </Border>
+
+                <Label Text="Telefono" Grid.Row="7" Grid.Column="0"  HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" VerticalTextAlignment="Center"  Padding="10,0"/>
+                <Border Grid.Row="7" Grid.Column="1">
+                    <Entry x:Name="txtTelefono" HorizontalTextAlignment="Start" FontSize="Medium" FontAttributes="Bold" Keyboard="Telephone" />
+                </Border>
+
+
+                <Button x:Name="cmdIngresarCliente"  Grid.Row="8" Grid.Column="0" Text="Agregar" BackgroundColor="Green" TextColor="White" WidthRequest="150" Margin="0,0"/>
+                <Button x:Name="cmdCancelarCliente"  Grid.Row="8" Grid.Column="1" Text="Cancelar" BackgroundColor="Red" TextColor="White" WidthRequest="150" Margin="0,0"/>
+
+            </Grid>
+
+        </Grid>
+
+
+    </ScrollView>
+
+
+
+</mopups:PopupPage>

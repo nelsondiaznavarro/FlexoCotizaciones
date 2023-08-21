@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FlexoCotizaciones.ConfUsuarios"
+             Title="Configurar Usuarios">
+    <ScrollView>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="80"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="20"/>
+
+            </Grid.ColumnDefinitions>
+            <Button     x:Name="cmdAgregarUsuario"
+                        
+                        Grid.Row="1" Grid.Column="1" 
+                        Text="Agregar(+)"
+                        BackgroundColor="Green"
+                            FontAttributes="Bold"
+                        />
+            <!--Text="Nuevo Parámetro"
+                        BackgroundColor="Green"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start"-->
+            <Button     x:Name="cmdListarUsuarios"
+                        IsVisible="False"
+                        Grid.Row="1" Grid.Column="3" 
+                        Text="Refrescar(*)"
+                        BackgroundColor="Yellow"
+                       TextColor="Black"
+                            FontAttributes="Bold"
+                        />
+            <!--
+                        Text="Refrescar"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        VerticalOptions="Start"-->
+
+            <Button     x:Name="cmdEliminarUsuario"
+                        
+                        Grid.Row="1" Grid.Column="5" 
+                        Text="Eliminar(-)"
+                            BackgroundColor="Red"
+                            FontAttributes="Bold"
+                        />
+
+            <ListView x:Name="ListaUsuariosFront"
+                        Margin="20"
+                        Grid.Row="2"
+                        Grid.Column="0"
+                        Grid.ColumnSpan="7"
+                        ItemSelected="OnItemSelected"
+                      >
+
+                <ListView.Header>
+                    <Grid BackgroundColor="Blue">
+                        <Grid.RowDefinitions>
+
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="40"/>
+                            <ColumnDefinition Width="200"/>
+                            <ColumnDefinition Width="100"/>
+
+
+
+
+                        </Grid.ColumnDefinitions>
+
+                        <Label Text="Id" Grid.Row="0" Grid.Column="0"  VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" TextColor="White"/>
+                        <Label Text="R.U.T"  Grid.Row="0" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center" TextColor="White"/>
+                        <Label Text="Iniciales"  Grid.Row="0" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" TextColor="White"/>
+
+                        <!--<ImageButton x:Name="cmdEditar" Source="editar2.ico"  Grid.Row="0" Grid.RowSpan="2" Grid.Column="6" />-->
+                        <!--<Button  x:Name="cmdModificar" Text="Mod." Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold" />
+                                    <Button  x:Name="cmdEliminar" Text="Elim."  Grid.Row="0" Grid.Column="6" Grid.RowSpan="2" BackgroundColor="Red" HeightRequest="40" WidthRequest="70" FontSize="Small" FontAttributes="Bold"/>-->
+                    </Grid>
+
+
+                </ListView.Header>
+
+                <ListView.ItemTemplate>
+
+                    <DataTemplate>
+
+                        <ViewCell>
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="40"/>
+                                    <ColumnDefinition Width="200"/>
+                                    <ColumnDefinition Width="100"/>
+
+
+
+                                </Grid.ColumnDefinitions>
+                                <!--<CheckBox x:Name="checkSeleccionadoUsuarios" Grid.Row="0" Grid.Column="0" />-->
+                                <Label Text="{Binding Id}" Grid.Row="0" Grid.Column="0"  VerticalOptions="Start" FontSize="Medium" FontAttributes="Bold" />
+                                <Label Text="{Binding rut}"  Grid.Row="0" Grid.Column="1" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="Center"/>
+                                <Label Text="{Binding iniciales}"  Grid.Row="0" Grid.Column="2" VerticalOptions="Start" FontSize="Medium" VerticalTextAlignment="End" />
+
+
+                            </Grid>
+
+
+
+                        </ViewCell>
+
+                    </DataTemplate>
+
+                </ListView.ItemTemplate>
+
+            </ListView>
+
+
+        </Grid>
+
+
+    </ScrollView>
+</ContentPage>
